@@ -6,8 +6,11 @@ import RouterPedidos from './router/pedidos.js'
 
 import CnxMongoDB from './model/DBMongo.js'
 
+import cors from 'cors'
+
 
 const app = express()
+app.use(cors())        //habilito CORS: peticiones al servidor desde origenes cruzados
 app.use(express.static('public'))
 
 app.use(express.json())

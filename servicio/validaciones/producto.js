@@ -5,11 +5,15 @@ import Joi from 'joi'
 const validar = producto => {
     const productoSchema = Joi.object({
         nombre: Joi.string().min(2).max(20).required(),
+        codigo: Joi.string().min(2).max(10).required(),
         precio: Joi.number().required(),
         stock: Joi.number().required(),
         marca: Joi.string().required(),
         categoria: Joi.string().required(),
-        detalles: Joi.string().required(),
+        descripcionCorta: Joi.string().min(2).required(),
+        descripcionLarga: Joi.string().min(2).required(),
+        edadDesde: Joi.number().required(),
+        edadHasta: Joi.number().required(),
         foto: Joi.string().required(),
         envio: Joi.boolean().required()
     })
